@@ -6,7 +6,7 @@ EMAIL_SCRIPT="/home/markkhor/temperature_analysis/send_email.sh"
 
 # --- 2. Get Live Data ---
 # Read the sensor
-RAW_TEMP=$(cat /sys/class/thermal/thermal_zone0/temp)
+RAW_TEMP=$(cat /sys/class/thermal/thermal_zone0ca/temp)
 
 # Math: We calculate with decimals for the display, but use whole numbers for the 'if' check
 # This creates a display like 37.5
@@ -25,7 +25,7 @@ if [ "$CURRENT_TEMP" -ge "$THRESHOLD" ]; then
     
     # Run the email script
     if [ -f "$EMAIL_SCRIPT" ]; then
-        bash "$EMAIL_SCRIPT" "$MESSAGE"
+        bash "$EMAIL_SCRIPT" "$MESSAGE" 2>/dev/null
         echo "SUCCESS: Email sent."
     else
         echo "ERROR: Email script not found at $EMAIL_SCRIPT"

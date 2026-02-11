@@ -9,7 +9,7 @@ SMTP_SERVER="mail.360.my" # SMTP server address
 SMTP_PORT="587"           # SMTP server port
 SMTP_USER="support@360.my" # SMTP username
 SMTP_PASS='yihuai9908!6Interactivehuatah!' # SMTP password
-RECIPIENT="smsalert@360.my" # Recipient email address
+RECIPIENT="seongchunlaw050@gmail.com" # Recipient email address
 
 # 3. Email Body
 BODY="Critical Temperature Alert Details:

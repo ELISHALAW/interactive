@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # --- Configuration ---
-LOG_DIR="/home/markkhor/law"
+LOG_DIR="/home/markkhor/temperature_analysis/temp_logs"
 LOG_FILE="$LOG_DIR/system_stats_${1:-$(date +%Y%m%d)}.csv"
 EMAIL_SCRIPT="/home/markkhor/temperature_analysis/send_email.sh" 
 
@@ -16,7 +16,7 @@ fi
 
 # --- Data Gathering ---
 TIMESTAMP=$(TZ="Asia/Kuala_Lumpur" date +"%Y-%m-%d %H:%M:%S")
-
+a
 # CPU, Memory, and Temperature gathering
 CPU_IDLE=$(vmstat 1 2 | tail -1 | awk '{print $15}')
 CPU_USAGE=$((100 - CPU_IDLE))
